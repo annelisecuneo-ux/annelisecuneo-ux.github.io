@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Annelise Cuneo | Engineering Portfolio</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
+    /* General Page Style */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -18,38 +18,54 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
+    /* Top Bar */
     header {
       width: 100%;
-      background-color: #0492C2;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      height: 90px; /* Thicker bar */
+      background-color: #638899;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
+    /* Side Bars */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 16px; /* thickness of side bars */
+      background-color: #638899;
+      z-index: 1;
+    }
+    .sidebar.left {
+      left: 0;
+    }
+    .sidebar.right {
+      right: 0;
+    }
+
+    /* Main Content */
     main {
       text-align: center;
-      margin-top: 2vh;
-      padding: 0 1rem;
+      margin-top: 5vh;
+      padding: 0 2rem;
       width: 100%;
       max-width: 900px;
+      z-index: 2;
     }
 
     h1 {
       font-size: 2.3rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
       color: #555;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
     h3 {
@@ -59,8 +75,9 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Button */
     a.download-btn {
-      background-color: #0492C2;
+      background-color: #638899;
       color: white;
       padding: 12px 28px;
       border-radius: 6px;
@@ -73,7 +90,7 @@
     }
 
     a.download-btn:hover {
-      background-color: #00497f;
+      background-color: #004f99;
     }
 
     /* Embedded PDF */
@@ -92,9 +109,16 @@
       color: #888;
       text-align: center;
       width: 100%;
+      z-index: 2;
     }
 
     @media (max-width: 600px) {
+      header {
+        height: 70px;
+      }
+      .sidebar {
+        width: 10px;
+      }
       .pdf-viewer {
         height: 400px;
       }
@@ -103,11 +127,16 @@
 </head>
 
 <body>
+  <!-- Top bar -->
   <header></header>
+
+  <!-- Side bars -->
+  <div class="sidebar left"></div>
+  <div class="sidebar right"></div>
 
   <main>
     <h1>Annelise Cuneo</h1>
-    <h2>BS Mechanical Engineering</h2>
+    <h2>B.S. Mechanical Engineering</h2>
     <h3>Engineering Portfolio</h3>
 
     <a href="portfolio.pdf" class="download-btn" download>Download Portfolio</a>
@@ -119,6 +148,7 @@
   <footer>© 2025 Annelise Cuneo</footer>
 </body>
 </html>
+
 
 
 
